@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration Success</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>
+	<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>Status of Your Transfer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="transferToSaving: ${transferToSavingList}">
+					<td th:text="${transferToSaving.status}">Status</td>
+				</tr>
+			</tbody>
+			<h3><a th:href="@{/getTransferPage}">Transfer to Saving</a></h3>
+			<h3><a th:href="@{/getTransferPage}">Transfer To Current</a></h3>
+			
+		</table>
+</h1>
+</body>
+</html>
